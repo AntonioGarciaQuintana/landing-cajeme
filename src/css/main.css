@@ -2564,7 +2564,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer-area {
   padding-top: 38px;
   /* background-color: #222222; */
-  background-image: url("/assets/images/unnamed.png");
+  background-image: url("https://cajeme-gift.herokuapp.com/landing-gift-cajeme/assets/images/unnamed.png");
   background-repeat: repeat-y;
   width: 100%;
   height: auto;
