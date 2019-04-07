@@ -6,7 +6,7 @@ import { DonateComponent } from './components/donate/donate.component';
 import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
-    {path: '', component: AppComponent, pathMatch: 'full'},
+    {path: '', component: HomeComponent, pathMatch: 'full'},
     { path: 'home', component: HomeComponent },
     { path: 'galleryperson', component: GalleryPersonCompanyComponent },
     { path: 'gallerybyworld', component: GalleryByWorldComponent },
