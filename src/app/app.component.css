@@ -1,0 +1,27 @@
+.img-responsive {
+    max-width: 80%;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1270px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+    ;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+  }
+

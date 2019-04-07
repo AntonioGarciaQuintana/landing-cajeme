@@ -1,0 +1,720 @@
+<p class="text-center custom-header" *ngIf="!isCashDonate">Seleccione un articulo y añadalo a su carrito de ayuda. para
+    posteriormente seguir con el siguiente paso
+
+    <button class="btn btn-primary btn-lg" type="button" (click)="detalle.show();" data-toggle="modal"
+        data-target="#cart" style="float:right;"><i class="fa fa-shopping-cart"></i> {{ '5' }}</button>
+
+</p>
+
+<p class="text-center custom-header" *ngIf="isCashDonate">Lo invitamos a ingresas el cantidad de su donación </p>
+<hr>
+<div class="row" *ngIf="isCashDonate">
+    <div class="mx-auto col-sm-6">
+        <!-- form user info -->
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">Monto a donar</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form" role="form" autocomplete="off">
+
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Ingrese la cantidad:</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                <div class="col-lg-9">
+                                    <button type="button" class="btn btn-primary" style="float: right"
+                                        (click)="goToPersonalInfo()">Continuar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- /form user info -->
+    </div>
+
+
+
+</div>
+<div class="row" *ngIf="!isCashDonate">
+
+    <aside class="col-sm-2">
+        <p>Filtros</p>
+        <br>
+        <div class="card">
+            <article class="card-group-item">
+                <header class="card-header">
+                    <h6 class="title" style="color: black">Tipo de donación </h6>
+                </header>
+                <div class="filter-content">
+                    <div class="card-body">
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadio" value="">
+                            <span class="form-check-label">
+                                Articulo
+                            </span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadio" value="">
+                            <span class="form-check-label">
+                                Servicio
+                            </span>
+                        </label>
+                    </div> <!-- card-body.// -->
+                </div>
+            </article> <!-- card-group-item.// -->
+            <article class="card-group-item">
+                <header class="card-header">
+                    <h6 class="title" style="color: black">Busqueda de categoría </h6>
+                </header>
+                <div class="filter-content">
+                    <div class="card-body">
+                        <form>
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label">
+                                    Sistemas de computo
+                                </span>
+                            </label> <!-- form-check.// -->
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label">
+                                    Productos escolates
+                                </span>
+                            </label> <!-- form-check.// -->
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label">
+                                    Productos para reciclaje
+                                </span>
+                            </label> <!-- form-check.// -->
+                        </form>
+
+                    </div> <!-- card-body.// -->
+                </div>
+            </article> <!-- card-group-item.// -->
+
+            <article class="card-group-item">
+                <header class="card-header">
+                    <h6 class="title" style="color: black">Rango de precio </h6>
+                </header>
+                <div class="filter-content">
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Min</label>
+                                <input type="number" class="form-control" id="inputEmail4" placeholder="$0">
+                            </div>
+                            <div class="form-group col-md-6 text-right">
+                                <label>Max</label>
+                                <input type="number" class="form-control" placeholder="$1,0000">
+                            </div>
+                        </div>
+                    </div> <!-- card-body.// -->
+                </div>
+            </article> <!-- card-group-item.// -->
+        </div> <!-- card.// -->
+    </aside> <!-- col.// -->
+
+    <aside class="col-sm-10">
+        <div class="input-group">
+            <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+            <input class="form-control" id="system-search" name="q" placeholder="Busqueda por nombre" required>
+        </div><br>
+        <div class="card">
+            <article class="card-group-item">
+                <header class="card-header">
+                    <h6 class="title" style="color: black">articulos o servicios</h6>
+                </header>
+                <div class="filter-content">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="https://agiflex.eu/wp-content/uploads/sites/6/2017/12/Firman-F-2000-1-350x260.jpg"
+                                        class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>Sample Product</h5>
+                                            <h5 class="price-text-color">$199.99</h5>
+                                        </div>
+                                    </div>
+                                    <div class="separator clear-left">
+                                        <p class="btn-add">
+                                            <button type="button" class="btn btn-primary"
+                                                (click)="onOpenMap();smModal.show()"> <i
+                                                    class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                        </p>
+                                        <p class="btn-details">
+                                            <button type="button" class="btn btn-secondary"
+                                                (click)="onOpenMap();smModal.show();"> <i class="fa fa-list"></i>&nbsp;
+                                                Detalle</button>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://www.prolificpackaging.com/images/automatic-VFFS-machines/5-350x260.png"
+                                        class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>Sample Product</h5>
+                                            <h5 class="price-text-color">$199.99</h5>
+                                        </div>
+                                    </div>
+                                    <div class="separator clear-left">
+                                        <p class="btn-add">
+                                            <button type="button" class="btn btn-primary"> <i
+                                                    class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                        </p>
+                                        <p class="btn-details">
+                                            <button type="button" class="btn btn-secondary"> <i
+                                                    class="fa fa-list"></i>&nbsp; Detalle</button>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="https://cdn.southwestmedical.com/img/products/CC-M2-Zero-Elevation.jpg?w=350&h=260&fit=crop"
+                                        class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>Sample Product</h5>
+                                            <h5 class="price-text-color">$199.99</h5>
+                                        </div>
+                                    </div>
+                                    <div class="separator clear-left">
+                                        <p class="btn-add">
+                                            <button type="button" class="btn btn-primary"> <i
+                                                    class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                        </p>
+                                        <p class="btn-details">
+                                            <button type="button" class="btn btn-secondary"> <i
+                                                    class="fa fa-list"></i>&nbsp; Detalle</button>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="https://petlift.com/wp-content/uploads/2017/06/TSP-4010-350x260.jpg"
+                                        class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>Sample Product</h5>
+                                            <h5 class="price-text-color">$199.99</h5>
+                                        </div>
+                                    </div>
+                                    <div class="separator clear-left">
+                                        <p class="btn-add">
+                                            <button type="button" class="btn btn-primary"> <i
+                                                    class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                        </p>
+                                        <p class="btn-details">
+                                            <button type="button" class="btn btn-secondary"> <i
+                                                    class="fa fa-list"></i>&nbsp; Detalle</button>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="https://www.yuasabatteries.com/wp-content/uploads/2017/12/battery-image_YTZ12S-350x260.x78244.png"
+                                        class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>Sample Product</h5>
+                                            <h5 class="price-text-color">$199.99</h5>
+                                        </div>
+                                    </div>
+                                    <div class="separator clear-left">
+                                        <p class="btn-add">
+                                            <button type="button" class="btn btn-primary"> <i
+                                                    class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                        </p>
+                                        <p class="btn-details">
+                                            <button type="button" class="btn btn-secondary"> <i
+                                                    class="fa fa-list"></i>&nbsp; Detalle</button>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="https://www.myanmarconch.com/wp-content/uploads/2017/10/sales_1-350x260.jpg"
+                                        class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>Sample Product</h5>
+                                            <h5 class="price-text-color">$199.99</h5>
+                                        </div>
+                                    </div>
+                                    <div class="separator clear-left">
+                                        <p class="btn-add">
+                                            <button type="button" class="btn btn-primary"> <i
+                                                    class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                        </p>
+                                        <p class="btn-details">
+                                            <button type="button" class="btn btn-secondary"> <i
+                                                    class="fa fa-list"></i>&nbsp; Detalle</button>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSta6p_ZrO4aecOnXj0DvGASRSr18hOupmLlXOrFANWmXhQ4ZOGLA"
+                                        class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>Sample Product</h5>
+                                            <h5 class="price-text-color">$199.99</h5>
+                                        </div>
+                                    </div>
+                                    <div class="separator clear-left">
+                                        <p class="btn-add">
+                                            <button type="button" class="btn btn-primary"> <i
+                                                    class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                        </p>
+                                        <p class="btn-details">
+                                            <button type="button" class="btn btn-secondary"> <i
+                                                    class="fa fa-list"></i>&nbsp; Detalle</button>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3aUaPczXdildPl1S5UilIOCDq3gGa9o_54xQPvmBOgkQT3oNcGg"
+                                        class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>Sample Product</h5>
+                                            <h5 class="price-text-color">$199.99</h5>
+                                        </div>
+                                    </div>
+                                    <div class="separator clear-left">
+                                        <p class="btn-add">
+                                            <button type="button" class="btn btn-primary"> <i
+                                                    class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                        </p>
+                                        <p class="btn-details">
+                                            <button type="button" class="btn btn-secondary"> <i
+                                                    class="fa fa-list"></i>&nbsp; Detalle</button>
+                                        </p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </aside>
+</div>
+
+<div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name2">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-sizes-name2" class="modal-title pull-left">Nombre del producto </h4>
+                &nbsp; <h5 class="price-text-color">$199.99</h5>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div style="height: 600px;" class="map" leaflet [leafletOptions]="options"
+                                (leafletMapReady)="onMapReady($event)">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <form [formGroup]="formSaveArticle">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <p>Descripcion del producto Descripcion del producto Descripcion del producto
+                                        Descripcion del producto Descripcion del producto Descripcion del producto
+                                        Descripcion del producto Descripcion del producto </p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Seleccione una zona</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="zone" id="exampleRadios1"
+                                            value="0" (click)="drawMap(0)" formControlName="zone">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            Lugar 1
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="zone" id="exampleRadios2"
+                                            value="1" (click)="drawMap(1)" formControlName="zone">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            Lugar 2
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="zone" id="exampleRadios3"
+                                            value="2" (click)="drawMap(2)" formControlName="zone">
+                                        <label class="form-check-label" for="exampleRadios3">
+                                            Lugar 3
+                                        </label>
+                                    </div>
+                                    <!-- <label for="exampleFormControlInput1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="name@example.com"> -->
+                                </div>
+
+                            </form>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">que tipo de compra? &nbsp; &nbsp;
+                                    &nbsp;</label>
+                                <ui-switch [checked]="true" [(ngModel)]="compraCompleta" name="ssd"
+                                    checkedLabel="Completa" uncheckedLabel="Parcial" (change)="onChange($event)">
+                                </ui-switch>
+                            </div>
+                            <div class="form-group" *ngIf="!compraCompleta">
+                                <label for="exampleFormControlSelect2">monto parcial</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="name@example.com">
+                            </div>
+
+                            <div class="separator clear-left">
+                                <p class="btn-add">
+                                    <button type="button" class="btn btn-primary"> <i
+                                            class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div bsModal #detalle="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name2">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-sizes-name2" class="modal-title pull-left">Detalle </h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="detalle.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th class="text-center">Precio</th>
+                                    <th> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6">
+                                        <div class="media">
+                                            <a class="thumbnail pull-left" href="#"> <img class="media-object"
+                                                    src="https://agiflex.eu/wp-content/uploads/sites/6/2017/12/Firman-F-2000-1-350x260.jpg"
+                                                    style="width: 72px; height: 72px;"> </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="#">Product name</a></h4>
+                                                <span>Tipo de compra: </span><span
+                                                    class="text-success"><strong>Completo</strong></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col-md-2 text-center"><strong>$14.61</strong></td>
+                                    <td class="col-md-2">
+                                        <button type="button" class="btn btn-danger">
+                                            <i class="fa fa-trash"></i> Remove
+                                        </button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6">
+                                        <div class="media">
+                                            <a class="thumbnail pull-left" href="#"> <img class="media-object"
+                                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3aUaPczXdildPl1S5UilIOCDq3gGa9o_54xQPvmBOgkQT3oNcGg"
+                                                    style="width: 72px; height: 72px;"> </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Product name</h4>
+                                                <span>Tipo de compra: </span><span
+                                                    class="text-warning"><strong>Parcial</strong></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col-md-2 text-center"><strong>$9.98</strong></td>
+                                    <td class="col-md-2">
+                                        <button type="button" class="btn btn-danger">
+                                            <i class="fa fa-trash"></i> Remove
+                                        </button></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>   </td>
+                                    <td>
+                                        <h3>Total</h3>
+                                    </td>
+                                    <td class="text-right">
+                                        <h3>$31.53</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>   </td>
+                                    <td colspan="3">
+                                        <button type="button" class="btn btn-success" (click)="goToPersonalInfo()">
+                                            <span class="fa fa-cart-plus"></span> Continuar con la compra
+                                        </button>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<ng-template #detail>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">First modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th class="text-center">Precio</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-md-6">
+                                <div class="media">
+                                    <a class="thumbnail pull-left" href="#"> <img class="media-object"
+                                            src="https://agiflex.eu/wp-content/uploads/sites/6/2017/12/Firman-F-2000-1-350x260.jpg"
+                                            style="width: 72px; height: 72px;"> </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#">Product name</a></h4>
+                                        <span>Tipo de compra: </span><span
+                                            class="text-success"><strong>Completo</strong></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-md-2 text-center"><strong>$14.61</strong></td>
+                            <td class="col-md-2">
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fa fa-trash"></i> Remove
+                                </button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-6">
+                                <div class="media">
+                                    <a class="thumbnail pull-left" href="#"> <img class="media-object"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3aUaPczXdildPl1S5UilIOCDq3gGa9o_54xQPvmBOgkQT3oNcGg"
+                                            style="width: 72px; height: 72px;"> </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Product name</h4>
+                                        <span>Tipo de compra: </span><span
+                                            class="text-warning"><strong>Parcial</strong></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-md-2 text-center"><strong>$9.98</strong></td>
+                            <td class="col-md-2">
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fa fa-trash"></i> Remove
+                                </button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>   </td>
+                            <td>
+                                <h3>Total</h3>
+                            </td>
+                            <td class="text-right">
+                                <h3>$31.53</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>   </td>
+                            <td colspan="3">
+                                <button type="button" class="btn btn-success">
+                                    <span class="fa fa-cart-plus"></span> Continuar con la compra
+                                </button>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+  </ng-template> -->
+
+<!-- <ng-template  #templateNested>
+    <div class="modal-header ">
+        <h4 class="modal-title pull-left">Second modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+            <div class="row">
+                    <div class="col-md-4">
+                            <div style="height: 600px;" class="map" leaflet [leafletOptions]="options"
+                            (leafletMapReady)="onMapReady($event)" (leafletClick)="onPutMarker($event)">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h3>lugares</h3>
+                    </div>
+            </div>
+
+    </div>
+</ng-template> -->
+
+
+<!-- <form>
+    <div class="row">
+
+        <div class="col-sm-9 ">
+            <br>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary">Action</button>
+                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span
+                            class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+            <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                        <span id="search_concept">Filter by</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#contains">Contains</a></li>
+                        <li><a href="#its_equal">It's equal</a></li>
+                        <li><a href="#greather_than">Greather than </a></li>
+                        <li><a href="#less_than">Less than </a></li>
+                        <li class="divider"></li>
+                        <li><a href="#all">Anything</a></li>
+                    </ul>
+                </div>
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span
+                            class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </div>
+        <div class="col-sm-3 ">
+            <br>
+
+            <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#cart"><i
+                    class="fa fa-shopping-cart"></i> {{ '5' }}</button>
+
+        </div>
+
+    </div>
+</form> -->

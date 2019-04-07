@@ -1,0 +1,118 @@
+<p class="text-center custom-header">Lo invitamos a ingresas sus datos para agradecer su contribucion y apareser como testimonio de sus donaciones
+</p>
+<hr>
+<div class="row">
+    <div class="mx-auto col-sm-8">
+        <!-- form user info -->
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">Información del donante</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input #fileInput type="file" (change)="selectFile($event)" class="dropify"
+                            data-max-file-size="50K" (click)="fileInput.value = null" data-max-height="600"
+                            data-max-width="600" data-allowed-file-extensions="png jpg" data-show-loader="false"
+                            data-height="290" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1" style="margin-right: 65px;">¿Que tipo de compra?
+                            </label>
+                            <ui-switch [checked]="true" [(ngModel)]="isPublic" name="ssd" checkedLabel="Publica"
+                                uncheckedLabel="Anonima">
+                            </ui-switch>
+                        </div>
+                        <form class="form" role="form" autocomplete="off">
+                            <div *ngIf="isPublic">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1" style="margin-right: 8px;">¿Es una persona o
+                                        empresa?</label>
+                                    <ui-switch [checked]="true" [(ngModel)]="isPerson" name="isPerson"
+                                        checkedLabel="Persona" uncheckedLabel="Organización">
+                                    </ui-switch>
+                                </div>
+
+
+                                <div *ngIf="isPerson">
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Nombres</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="!isPerson">
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Nombre de la
+                                            compañia</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Correo electronico</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">RFC</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Direcció</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                <div class="col-lg-9">
+                                    <button type="button" class="btn btn-primary"
+                                        style="float: right" (click)="goToPaypal()">Continuar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- /form user info -->
+    </div>
+</div>
+<!-- <div class="row">
+    <aside class="col-sm-12">
+       
+        <div class="card">
+            <article class="card-group-item">
+                <header class="card-header">
+                    <h6 class="title">Datos personales </h6>
+                </header>
+                <div class="filter-content">
+                      
+                    <div class="row">
+                         
+
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </aside>
+</div> -->

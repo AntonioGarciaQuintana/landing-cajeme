@@ -1,0 +1,55 @@
+.img-circular {
+    width: 200px;
+    height: 200px;
+    background-image: url('https://anchoringu.com/wp-content/uploads/2018/11/DonationIcon.png?w=640');
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+}
+
+.img-circular2 {
+    width: 200px;
+    height: 200px;
+    background-image: url('https://www.roominn.org/wp-content/uploads/2017/06/in-kind-donation-icon.png');
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+}
+
+.img-circular3 {
+    width: 200px;
+    height: 200px;
+    background-image: url('https://i1.wp.com/medicodesalud.com/wp-content/uploads/2018/03/give-icon-yellow.png?resize=512%2C512&ssl=1');
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+}
+
+.centrado {
+    text-align: center
+}
+
+.sw-theme-arrows>ul.step-anchor>li.active>a {
+    border-color: #75875B!important;
+    color: #fff!important;
+    background: #75875B!important;
+}
+
+.sw-theme-arrows>ul.step-anchor>li.active>a:after {
+    border-left: 30px solid #75875B!important;
+}

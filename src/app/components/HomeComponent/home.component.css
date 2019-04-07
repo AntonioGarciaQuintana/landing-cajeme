@@ -1,0 +1,21 @@
+.background-image {
+    background-image: url("/assets/images/background-landing (2).png");
+    background-color: #cccccc;
+    ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.aligncenter {
+    text-align: center;
+}
+
+.box {
+    width: 100%;
+}
+
+.box .icon {
+    margin-bottom: 20px;
+}
