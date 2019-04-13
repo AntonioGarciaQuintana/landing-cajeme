@@ -14,7 +14,7 @@ export class GalleryByWorldComponent implements OnInit {
     options = {
         layers: [
             tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; Cd. Obregon, Sonora'
+                attribution: '&copy; Cd. Obregón, Sonora'
             }),
         ],
         zoom: 13,

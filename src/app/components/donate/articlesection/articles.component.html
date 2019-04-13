@@ -1,4 +1,4 @@
-<p class="text-center custom-header" *ngIf="!isCashDonate">Seleccione un articulo y añadalo a su carrito de ayuda. para
+<p class="text-center custom-header" *ngIf="!isCashDonate">Seleccione un artículo y añádalo a su carrito. para
     posteriormente seguir con el siguiente paso
 
     <button class="btn btn-primary btn-lg" type="button" (click)="detalle.show();" data-toggle="modal"
@@ -62,7 +62,7 @@
                         <label class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadio" value="">
                             <span class="form-check-label">
-                                Articulo
+                                Artículo
                             </span>
                         </label>
                         <label class="form-check">
@@ -76,7 +76,7 @@
             </article> <!-- card-group-item.// -->
             <article class="card-group-item">
                 <header class="card-header">
-                    <h6 class="title" style="color: black">Busqueda de categoría </h6>
+                    <h6 class="title" style="color: black">Búsqueda de categoría </h6>
                 </header>
                 <div class="filter-content">
                     <div class="card-body">
@@ -130,12 +130,12 @@
     <aside class="col-sm-10">
         <div class="input-group">
             <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
-            <input class="form-control" id="system-search" name="q" placeholder="Busqueda por nombre" required>
+            <input class="form-control" id="system-search" name="q" placeholder="Búsqueda por nombre" required>
         </div><br>
         <div class="card">
             <article class="card-group-item">
                 <header class="card-header">
-                    <h6 class="title" style="color: black">articulos o servicios</h6>
+                    <h6 class="title" style="color: black">Artículos o servicios</h6>
                 </header>
                 <div class="filter-content">
                     <div class="row">
@@ -148,7 +148,7 @@
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-12">
-                                            <h5>Sample Product</h5>
+                                            <h5>Producto de ejemplo</h5>
                                             <h5 class="price-text-color">$199.99</h5>
                                         </div>
                                     </div>
@@ -179,7 +179,7 @@
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-12">
-                                            <h5>Sample Product</h5>
+                                            <h5>Producto de ejemplo</h5>
                                             <h5 class="price-text-color">$199.99</h5>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-12">
-                                            <h5>Sample Product</h5>
+                                            <h5>Producto de ejemplo</h5>
                                             <h5 class="price-text-color">$199.99</h5>
                                         </div>
                                     </div>
@@ -237,7 +237,7 @@
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-12">
-                                            <h5>Sample Product</h5>
+                                            <h5>Producto de ejemplo</h5>
                                             <h5 class="price-text-color">$199.99</h5>
                                         </div>
                                     </div>
@@ -266,7 +266,7 @@
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-12">
-                                            <h5>Sample Product</h5>
+                                            <h5>Producto de ejemplo</h5>
                                             <h5 class="price-text-color">$199.99</h5>
                                         </div>
                                     </div>
@@ -295,7 +295,7 @@
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-12">
-                                            <h5>Sample Product</h5>
+                                            <h5>Producto de ejemplo</h5>
                                             <h5 class="price-text-color">$199.99</h5>
                                         </div>
                                     </div>
@@ -324,7 +324,7 @@
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-12">
-                                            <h5>Sample Product</h5>
+                                            <h5>Producto de ejemplo</h5>
                                             <h5 class="price-text-color">$199.99</h5>
                                         </div>
                                     </div>
@@ -353,7 +353,7 @@
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-12">
-                                            <h5>Sample Product</h5>
+                                            <h5>Producto de ejemplo</h5>
                                             <h5 class="price-text-color">$199.99</h5>
                                         </div>
                                     </div>
@@ -402,7 +402,7 @@
 
                             <form [formGroup]="formSaveArticle">
                                 <div class="form-group">
-                                    <label>Description</label>
+                                    <label>Descripción</label>
                                     <p>Descripcion del producto Descripcion del producto Descripcion del producto
                                         Descripcion del producto Descripcion del producto Descripcion del producto
                                         Descripcion del producto Descripcion del producto </p>
@@ -437,10 +437,10 @@
 
                             </form>
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">que tipo de compra? &nbsp; &nbsp;
+                                <label for="exampleFormControlSelect1">¿Tipo de donación? &nbsp; &nbsp;
                                     &nbsp;</label>
                                 <ui-switch [checked]="true" [(ngModel)]="compraCompleta" name="ssd"
-                                    checkedLabel="Completa" uncheckedLabel="Parcial" (change)="onChange($event)">
+                                    checkedLabel="Completa" uncheckedLabel="" (change)="onChange($event)">
                                 </ui-switch>
                             </div>
                             <div class="form-group" *ngIf="!compraCompleta">
@@ -479,7 +479,7 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Product</th>
+                                    <th>Producto</th>
                                     <th class="text-center">Precio</th>
                                     <th> </th>
                                 </tr>
@@ -492,7 +492,7 @@
                                                     src="https://agiflex.eu/wp-content/uploads/sites/6/2017/12/Firman-F-2000-1-350x260.jpg"
                                                     style="width: 72px; height: 72px;"> </a>
                                             <div class="media-body">
-                                                <h4 class="media-heading"><a href="#">Product name</a></h4>
+                                                <h4 class="media-heading"><a href="#">Nombre del producto</a></h4>
                                                 <span>Tipo de compra: </span><span
                                                     class="text-success"><strong>Completo</strong></span>
                                             </div>
@@ -501,7 +501,7 @@
                                     <td class="col-md-2 text-center"><strong>$14.61</strong></td>
                                     <td class="col-md-2">
                                         <button type="button" class="btn btn-danger">
-                                            <i class="fa fa-trash"></i> Remove
+                                            <i class="fa fa-trash"></i> Eliminar
                                         </button></td>
                                 </tr>
                                 <tr>
@@ -511,7 +511,7 @@
                                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3aUaPczXdildPl1S5UilIOCDq3gGa9o_54xQPvmBOgkQT3oNcGg"
                                                     style="width: 72px; height: 72px;"> </a>
                                             <div class="media-body">
-                                                <h4 class="media-heading">Product name</h4>
+                                                <h4 class="media-heading">Nombre del producto</h4>
                                                 <span>Tipo de compra: </span><span
                                                     class="text-warning"><strong>Parcial</strong></span>
                                             </div>
@@ -520,7 +520,7 @@
                                     <td class="col-md-2 text-center"><strong>$9.98</strong></td>
                                     <td class="col-md-2">
                                         <button type="button" class="btn btn-danger">
-                                            <i class="fa fa-trash"></i> Remove
+                                            <i class="fa fa-trash"></i> Eliminar
                                         </button></td>
                                 </tr>
                             </tbody>
@@ -538,7 +538,7 @@
                                     <td>   </td>
                                     <td colspan="3">
                                         <button type="button" class="btn btn-success" (click)="goToPersonalInfo()">
-                                            <span class="fa fa-cart-plus"></span> Continuar con la compra
+                                            <span class="fa fa-cart-plus"></span> Continuar con la donación
                                         </button>
                                     </td>
                                     <td>
@@ -568,7 +568,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Product</th>
+                            <th>Producto</th>
                             <th class="text-center">Precio</th>
                             <th> </th>
                         </tr>
@@ -581,7 +581,7 @@
                                             src="https://agiflex.eu/wp-content/uploads/sites/6/2017/12/Firman-F-2000-1-350x260.jpg"
                                             style="width: 72px; height: 72px;"> </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading"><a href="#">Product name</a></h4>
+                                        <h4 class="media-heading"><a href="#">Nombre del producto</a></h4>
                                         <span>Tipo de compra: </span><span
                                             class="text-success"><strong>Completo</strong></span>
                                     </div>
@@ -590,7 +590,7 @@
                             <td class="col-md-2 text-center"><strong>$14.61</strong></td>
                             <td class="col-md-2">
                                 <button type="button" class="btn btn-danger">
-                                    <i class="fa fa-trash"></i> Remove
+                                    <i class="fa fa-trash"></i> Eliminar
                                 </button></td>
                         </tr>
                         <tr>
@@ -600,7 +600,7 @@
                                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3aUaPczXdildPl1S5UilIOCDq3gGa9o_54xQPvmBOgkQT3oNcGg"
                                             style="width: 72px; height: 72px;"> </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading">Product name</h4>
+                                        <h4 class="media-heading">Nombre del producto</h4>
                                         <span>Tipo de compra: </span><span
                                             class="text-warning"><strong>Parcial</strong></span>
                                     </div>
@@ -609,7 +609,7 @@
                             <td class="col-md-2 text-center"><strong>$9.98</strong></td>
                             <td class="col-md-2">
                                 <button type="button" class="btn btn-danger">
-                                    <i class="fa fa-trash"></i> Remove
+                                    <i class="fa fa-trash"></i> Eliminar
                                 </button></td>
                         </tr>
                     </tbody>
@@ -627,7 +627,7 @@
                             <td>   </td>
                             <td colspan="3">
                                 <button type="button" class="btn btn-success">
-                                    <span class="fa fa-cart-plus"></span> Continuar con la compra
+                                    <span class="fa fa-cart-plus"></span> Continuar con la donación
                                 </button>
                             </td>
                             <td>
