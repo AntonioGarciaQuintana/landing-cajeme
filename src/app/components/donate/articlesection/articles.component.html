@@ -6,7 +6,7 @@
 
 </p>
 
-<p class="text-center custom-header" *ngIf="isCashDonate">Lo invitamos a ingresas el cantidad de su donación </p>
+<p class="text-center custom-header" *ngIf="isCashDonate">Lo invitamos a ingresar la cantidad de su donación </p>
 <hr>
 <div class="row" *ngIf="isCashDonate">
     <div class="mx-auto col-sm-6">
@@ -385,7 +385,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="dialog-sizes-name2" class="modal-title pull-left">Nombre del producto </h4>
-                &nbsp; <h5 class="price-text-color">$199.99</h5>
                 <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -440,13 +439,11 @@
                                 <label for="exampleFormControlSelect1">¿Tipo de donación? &nbsp; &nbsp;
                                     &nbsp;</label>
                                 <ui-switch [checked]="true" [(ngModel)]="compraCompleta" name="ssd"
-                                    checkedLabel="Completa" uncheckedLabel="" (change)="onChange($event)">
+                                    checkedLabel="Completa" uncheckedLabel="Parcial" (change)="onChange($event)">
                                 </ui-switch>
                             </div>
                             <div class="form-group" *ngIf="!compraCompleta">
-                                <label for="exampleFormControlSelect2">monto parcial</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1"
-                                    placeholder="name@example.com">
+                                <input type="text" class="form-control" id="exampleFormControlInput1">
                             </div>
 
                             <div class="separator clear-left">
@@ -493,7 +490,7 @@
                                                     style="width: 72px; height: 72px;"> </a>
                                             <div class="media-body">
                                                 <h4 class="media-heading"><a href="#">Nombre del producto</a></h4>
-                                                <span>Tipo de compra: </span><span
+                                                <span>Tipo de donación: </span><span
                                                     class="text-success"><strong>Completo</strong></span>
                                             </div>
                                         </div>
@@ -512,7 +509,7 @@
                                                     style="width: 72px; height: 72px;"> </a>
                                             <div class="media-body">
                                                 <h4 class="media-heading">Nombre del producto</h4>
-                                                <span>Tipo de compra: </span><span
+                                                <span>Tipo de donación: </span><span
                                                     class="text-warning"><strong>Parcial</strong></span>
                                             </div>
                                         </div>
@@ -582,7 +579,7 @@
                                             style="width: 72px; height: 72px;"> </a>
                                     <div class="media-body">
                                         <h4 class="media-heading"><a href="#">Nombre del producto</a></h4>
-                                        <span>Tipo de compra: </span><span
+                                        <span>Tipo de donación: </span><span
                                             class="text-success"><strong>Completo</strong></span>
                                     </div>
                                 </div>
@@ -601,7 +598,7 @@
                                             style="width: 72px; height: 72px;"> </a>
                                     <div class="media-body">
                                         <h4 class="media-heading">Nombre del producto</h4>
-                                        <span>Tipo de compra: </span><span
+                                        <span>Tipo de donación: </span><span
                                             class="text-warning"><strong>Parcial</strong></span>
                                     </div>
                                 </div>
